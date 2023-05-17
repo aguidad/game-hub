@@ -21,7 +21,7 @@ export interface Games {
   setGames: (games: Game[]) => void;
 }
 
-export default create<Games>((set, get) => ({
+export default create<Games>((set) => ({
   games: [],
   setGames: (games) => set({ games }),
 }));
