@@ -3,9 +3,9 @@ import { Link, List, ListItem, Text } from "@chakra-ui/react";
 
 import croppedImageUrl from "utils/image-url";
 import Genre from "entities/Genre";
-import genres from "data/genres";
 
 import GenresSkeleton from "./GenresSkeleton";
+import useGenre from "hooks/useGenre";
 
 interface Props {
   setSelectedGenre: (genre: Genre) => void;
@@ -13,14 +13,14 @@ interface Props {
 }
 
 const Genres = ({ selectedGenre, setSelectedGenre }: Props) => {
-  if (genres.length === 0) return <GenresSkeleton />;
-
+  const { data: genres } = useGenre();
+  if (genres?.results.length === 0) return <GenresSkeleton />;
   return (
     <List>
       <Heading fontSize="2xl" mb={5}>
         Genres
       </Heading>
-      {genres.map(({ id, name, image_background }, i) => (
+      {genres?.results.map(({ id, name, image_background }, i) => (
         <ListItem key={id} py={1}>
           <HStack>
             <Image
@@ -29,7 +29,7 @@ const Genres = ({ selectedGenre, setSelectedGenre }: Props) => {
               objectFit="cover"
               src={croppedImageUrl(image_background)}
             />
-            <Link onClick={() => setSelectedGenre(genres[i])}>
+            <Link onClick={() => setSelectedGenre(genres.results[i])}>
               <Text
                 whiteSpace="nowrap"
                 fontWeight={selectedGenre?.name === name ? "bold" : "normal"}
