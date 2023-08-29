@@ -5,6 +5,7 @@
       "~/*": ["./src/"],
       "api/*": ["./src/api/*"],
       "assets/*": ["./src/assets/*"],
+      "data/*": ["./src/data/*"],
       "components/*": ["./src/components/*"],
       "features/*": ["./src/features/*"],
       "configs/*": ["./src/configs/*"],
