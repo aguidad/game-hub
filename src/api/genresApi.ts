@@ -1,9 +1,7 @@
-import { AxiosRequestConfig } from "axios";
+import ApiResponse from "src/types/ApiResponse";
+import Genre from "src/types/Genre";
 
-import { GenresApiResponse } from "entities/Genre";
-
-import apiClient from "./api-client";
+import APIClient from "./api-client";
 import endpoints from "./endpoints";
 
-export const getGenres = (data: AxiosRequestConfig) =>
-  apiClient.get<GenresApiResponse>(endpoints.genres, data);
+export default new APIClient<ApiResponse<Genre>>(endpoints.genres);

@@ -8,7 +8,7 @@ interface Props {
 
 const SearchInput = ({ onSearch }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
-  console.log(ref.current?.value);
+
   return (
     <Box flex={1}>
       <form

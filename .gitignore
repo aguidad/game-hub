@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .vercel
 react-query
+state-management
+stores
+routing
