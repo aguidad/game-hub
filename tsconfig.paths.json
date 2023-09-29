@@ -12,8 +12,8 @@
       "hooks/*": ["./src/hooks/*"],
       "routes/*": ["./src/routes/*"],
       "pages/*": ["./src/pages/*"],
-      "types/*": ["./src/types/*"],
       "stores/*": ["./src/stores/*"],
+      "types/*": ["./src/types/*"],
       "utils/*": ["./src/utils/*"]
     }
   }

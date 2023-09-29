@@ -1,6 +1,11 @@
 import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 
-import { GameHeading, Games } from "features/games";
+import {
+  GameHeading,
+  Games,
+  PlatformSelector,
+  RateSelector,
+} from "features/games";
 import Genres from "features/genres";
 
 function Home() {
@@ -18,8 +23,10 @@ function Home() {
         <Box px={5}>
           <GameHeading />
           <Flex py={5}>
-            <Box mr={10}>{/* <PlatformSelector /> */}</Box>
-            {/* <RateSelector /> */}
+            <Box mr={10}>
+              <PlatformSelector />
+            </Box>
+            <RateSelector />
           </Flex>
         </Box>
         <Games />
